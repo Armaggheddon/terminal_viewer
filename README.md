@@ -19,7 +19,6 @@ terminal_viwer is a simple command line application that allows to display media
     # for MacOS/Linux
     pip install .\dist\terminal_viewer-0.1.tar.gz
     ```
-    [!NOTE]
     If the tool is already installed run the above command with `--force-reinstall` option.
 1. Launch the application with:
     ```bash
