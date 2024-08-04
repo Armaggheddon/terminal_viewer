@@ -4,8 +4,8 @@ terminal_viwer is a simple command line application that allows to display media
 ## Installation
 1. Clone the repository: 
     ``` bash
-    git clone https://github.com/...
-    cd project_name
+    git clone https://github.com/Armaggheddon/terminal_viewer.git
+    cd terminal_viewer
     ```
 1. Build the python wheel:
     ``` bash
