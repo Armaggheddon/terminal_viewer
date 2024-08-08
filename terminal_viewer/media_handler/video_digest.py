@@ -39,8 +39,6 @@ class VideoDigest(MediaDigest):
         self.command_queue = []
         self.last_frame = None
 
-        self.first_keyframe_ms = None
-
         # All commands return a boolean to indicate if 
         # the next frame should be sampled. For example,
         # if the video is paused, the next frame should NOT be
