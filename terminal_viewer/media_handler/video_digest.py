@@ -24,6 +24,17 @@ class VideoDigest(MediaDigest):
         # self.fps = self.cap.get(cv2.CAP_PROP_FPS)
         # self.duration_ms = self.cap.get(cv2.CAP_PROP_FRAME_COUNT)/self.fps * 1000
         # self.current_pos_ms = 0.0
+        
+        self.video_container = av.open(self.media_path)
+        self.time_base = self.video_container.streams.video[0].time_base
+        self.average_rate = self.video_container.streams.video[0].average_rate
+        self.duration_ms = int(self.video_container.duration / 1000)
+        self.current_pos_ms = 0
+
+        # self.cap = cv2.VideoCapture(self.media_path)
+        # self.fps = self.cap.get(cv2.CAP_PROP_FPS)
+        # self.duration_ms = self.cap.get(cv2.CAP_PROP_FRAME_COUNT)/self.fps * 1000
+        # self.current_pos_ms = 0.0
         self.is_playing = True
         self.command_queue = []
         self.last_frame = None
@@ -61,8 +72,6 @@ class VideoDigest(MediaDigest):
 
         try:
             frame = next(self.video_container.decode(video=0))
-            if self.first_keyframe_ms is None and frame.key_frame:
-                self.first_keyframe_ms = int(frame.time * 1000) # convert to milliseconds
             self.last_frame = frame.to_rgb().to_ndarray()[:, :, ::-1] # convert to BGR
             # get current time of frame in ms
             self.current_pos_ms = int(frame.time * 1000)
@@ -74,6 +83,8 @@ class VideoDigest(MediaDigest):
         return self.last_frame
     
     def _skip_frame(self) -> bool:
+        """ Skip to the next key frame """
+        self.video_container.seek(self.current_pos_ms * 1000, backward=False)
         """ Skip to the next key frame """
         self.video_container.seek(self.current_pos_ms * 1000, backward=False)
         return True
