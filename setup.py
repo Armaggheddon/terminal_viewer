@@ -19,6 +19,7 @@ setup(
    author_email='your@email.com',
    description='Terminal media viewer, can display images and videos on your terminal.',
    packages=find_packages(),
+   requires=['numpy', 'opencv-python', 'av'],
    entry_points={
       'console_scripts': [
          'terminal_viewer=terminal_viewer.main:main',
