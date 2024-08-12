@@ -57,22 +57,19 @@ Once the application is launched the following keys can be used to perform speci
 - `+`: goes to the next keyframe. Works only on videos.
 - `-`: goes to the previous keyframe. Works only on videos.
 - `p`: play/pause the current media. Works only on videos. 
-- `t`: displays an overlay with the media file name, the number current position in the queue of items to be played and, if the media file is a video, the progress bar with the media duration.
-- `h`: displays an onverlay with all of the above commands.
+- `t`: hides/shows an overlay with the media file name, the current position in the queue of items to be played and, if the media file is a video, the progress bar with the media duration.
+- `h`: hides/shows an onverlay with all of the above commands.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-    <div style="flex: 1; min-width: 300px; margin: 5px;">
-        <img src="./docs/unsupported_media.png" alt="Unsupported media" style="width: 100%;">
-    </div>
-    <div style="flex: 1; min-width: 300px; margin: 5px;">
-        <img src="./docs/img_display.png" alt="Image display" style="width: 100%;">
-    </div>
-</div>
-<div style="display: flex; justify-content: center; margin-top: 5px;">
-    <div style="flex: 1; min-width: 300px; margin: 5px;">
-        <img src="./docs/video_display.png" alt="Video display" style="width: 100%;">
-    </div>
-</div>
+<table>
+  <tr>
+    <td align="center"><img src="./docs/unsupported_media.png" alt="unsupported media" width="100%"/><br>Unsupported media</td>
+    <td align="center"><img src="./docs/img_display.png" alt="display image" width="100%"/><br>Displaying an image</td>
+  </tr>
+  <tr align="center">
+    <td align="center"><img src="./docs/video_display.png" alt="unsupported media" width="100%"/><br>Displaying a video</td>
+    <td align="center"><img src="./docs/grayscale.png" alt="display grayscale" width="100%"/><br>Displaying media with grayscale</td>
+  </tr>
+</table>
 
 ## Examples
 The following examples show how to use the application.
