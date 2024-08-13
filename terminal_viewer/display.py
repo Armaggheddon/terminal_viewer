@@ -21,7 +21,7 @@ class MediaControl:
         self.should_perform = initial_value
 
     def toggle(self) -> None:
-        """ Toggle the state of the media control """
+        """ Toggle the state of the media control between True and False """
         self.should_perform = not self.should_perform
 
 
@@ -96,7 +96,6 @@ class Display():
         - folders (List[str]): a list of folders containing media files to display
         - grayscale (bool): display the media in grayscale
         """
-
         self.terminal_size = os.get_terminal_size()
         self.cols = self.terminal_size.columns
         self.lines = self.terminal_size.lines
